@@ -1,32 +1,21 @@
 <template>
   <div id="app" class="container-fluid">
     <h3>{{title}}</h3>
-    <div class="row">
-      <Character 
-        v-for="(id, index) in initial_ids"
-        :id="id"
-        :key="index"
-      />
-    </div>
+    <h4>
+      <router-link class="link" to="/data/people">People</router-link> | 
+      <router-link class="link" to="/data/planets">Planets</router-link>
+    </h4>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Character from './components/Character.vue';
-
 export default {
   name: 'app',
   data() {
     return {
-      title: 'Generate the team',
-      initial_ids: [1, 13, 14]
+      title: 'Starbase Router'
     };
-  },
-  components: {
-    Character
   }
 };
 </script>
-
-<style>
-</style>
